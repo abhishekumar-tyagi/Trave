@@ -11,7 +11,7 @@ const Navbar = () => {
 			</div>
 			<div className="flex flex-row gap-5  font-light">		
 				<div className="cursor-pointer">
-					Booking
+					Explore
 				</div>
 				<div className="cursor-pointer" onClick={() => router.push('/app/about')}>
 					About
@@ -20,7 +20,7 @@ const Navbar = () => {
 					Contact
 				</div>
 			</div>
-			<div className="border-2 cursor-pointer rounded-lg   w-32 flex flex-row items-center justify-center pt-1.5 pb-1.5 ">
+			<div onClick={() => router.push('/app/signin')} className="border-2 cursor-pointer rounded-lg w-32 flex flex-row items-center justify-center pt-1.5 pb-1.5">
 				Signin
 			</div>
 		</div>
