@@ -39,7 +39,7 @@ const Signup = () => {
 						<div onClick={() => router.push('/app/signin')} className="border-2 cursor-pointer w-48 flex flex-row items-center justify-center pt-2 pb-2 rounded-lg">
 							Sign In
 						</div>
-						<div className="bg-white text-black border-2 cursor-pointer rounded-lg w-48 flex flex-row items-center justify-center pt-2 pb-2">
+						<div onClick={() => router.push('/app/dashboard')} className="bg-white text-black border-2 cursor-pointer rounded-lg w-48 flex flex-row items-center justify-center pt-2 pb-2">
 							Sign Up
 						</div>
 					</div>
