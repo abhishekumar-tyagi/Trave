@@ -27,7 +27,7 @@ const Navbar = () => {
 					Signin
 				</div>
 				:
-				<div  className="border-2 cursor-pointer rounded-lg w-40 flex flex-row items-center gap-2 justify-center pt-1.5 pb-1.5">
+				<div onClick={() => router.push('/app/dashboard')}  className="border-2 cursor-pointer rounded-lg w-40 flex flex-row items-center gap-2 justify-center pt-1.5 pb-1.5">
 					<div>
 						{session?.user?.name}
 					</div>

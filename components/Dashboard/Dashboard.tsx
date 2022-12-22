@@ -1,5 +1,5 @@
 import { GetStaticProps } from "next";
-import { useSession } from "next-auth/react";
+import { useSession, signOut } from "next-auth/react";
 
 
 
@@ -16,6 +16,9 @@ import { useSession } from "next-auth/react";
 const Dashboard = () => {
 
 	const {data: session} = useSession()
+	const handleSignOut = () => {
+		signOut({callbackUrl: '/'})
+	}
 	return(
 		<div className=" w-full h-screen bg-dashboard bg-cover bg-center flex  justify-center items-center  bg-blend-multiply  bg-no-repeat">
 			<div className="relative border-2 backdrop-blur-sm pl-20 pt-10  w-[75%] rounded-lg h-[80%] mt-[7vh] bg-black/20">
@@ -48,9 +51,15 @@ const Dashboard = () => {
 				<div className="text-xl mt-5">
 					🇮🇳 India 
 				</div>
-				<div className="absolute right-0 bottom-0 pb-10 pr-10 cursor-pointer">
-					<img src="/images/Edit.svg" alt="edit" draggable="false" />
+				<div className="absolute right-0 bottom-0 pb-10 pr-10">
+					<div onClick={() => handleSignOut()} className="bg-white text-black border-2 cursor-pointer w-32 flex flex-row items-center justify-center pt-2 pb-2 rounded-lg">
+						Sign Out
+					</div>
 				</div>
+				
+				{/* <div className="absolute right-0 bottom-0 pb-10 pr-10 cursor-pointer">
+					<img src="/images/Edit.svg" alt="edit" draggable="false" />
+				</div> */}
 			</div>
 		</div>
 	)

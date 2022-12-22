@@ -5,7 +5,7 @@ import { getSession, signIn, signOut } from "next-auth/react"
 const Signin = ({ session }) => {
 
 	const handleSignIn = () => {
-		signIn('google', {callbackUrl: 'http://localhost:3000/app/dashboard'})
+		signIn('google', {callbackUrl: '/app/dashboard'})
 	}
 	const handleSignOut = () => {
 		signOut({callbackUrl: 'http://localhost:3000'})
