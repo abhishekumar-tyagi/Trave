@@ -1,14 +1,11 @@
 import router from "next/router"
 
-import { getSession, signIn, signOut } from "next-auth/react"
+import { signIn } from "next-auth/react"
 
-const Signin = ({ session }) => {
+const Signin = () => {
 
 	const handleSignIn = () => {
 		signIn('google', {callbackUrl: '/app/dashboard'})
-	}
-	const handleSignOut = () => {
-		signOut({callbackUrl: 'http://localhost:3000'})
 	}
 
 	return (
@@ -60,14 +57,6 @@ const Signin = ({ session }) => {
 export default Signin
 
 
-export const getServerSideprops = async (context) => {
-	const session = await getSession(context);
 
-	return {
-		props: {
-			session,
-		}
-	}
-}
 
 
