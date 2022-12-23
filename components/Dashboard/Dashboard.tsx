@@ -39,7 +39,7 @@ const Dashboard = () => {
 						bleh
 					</>
 				}
-				<div className="flex flex-row gap-4 mt-20 text-xl">
+				{/* <div className="flex flex-row gap-4 mt-20 text-xl">
 					<div>
 						Male
 					</div>
@@ -50,7 +50,7 @@ const Dashboard = () => {
 				</div>
 				<div className="text-xl mt-5">
 					🇮🇳 India 
-				</div>
+				</div> */}
 				<div className="absolute right-0 bottom-0 pb-10 pr-10">
 					<div onClick={() => handleSignOut()} className="bg-white text-black border-2 cursor-pointer w-32 flex flex-row items-center justify-center pt-2 pb-2 rounded-lg">
 						Sign Out
