@@ -13,9 +13,11 @@ const Dropdown = () => {
 		<div>
 			<DropdownMenu.Root >
 				<DropdownMenu.Trigger className="border-2  cursor-pointer rounded-lg w-40 flex flex-row items-center gap-2 justify-center pt-1.5 pb-1.5 focus:outline-none">
-					<div>
-						{session?.user?.name}
-					</div>
+					{session && 
+						<div>
+							{session?.user?.name}
+						</div>
+					}
 					<div>
 						<img src="/images/Dropdown.svg" alt="dropdown" draggable="false"/>
 					</div>

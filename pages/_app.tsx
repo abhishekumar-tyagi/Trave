@@ -4,6 +4,7 @@ import type { AppProps } from 'next/app'
 import Navbar from '../components/Navbar/Navbar'
 import { useRouter } from 'next/router';
 import { SessionProvider } from "next-auth/react"
+import { Analytics } from '@vercel/analytics/react';
 
 export default function App({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   const router = useRouter();
@@ -19,6 +20,7 @@ export default function App({ Component, pageProps: { session, ...pageProps } }:
       </Head>
       {noNav.includes(showNavbar) ? null : <Navbar />}
       <Component {...pageProps} />
+      <Analytics />
     </SessionProvider>
     )
 }

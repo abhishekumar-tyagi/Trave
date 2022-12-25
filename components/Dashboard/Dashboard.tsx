@@ -14,27 +14,20 @@ import { useSession } from "next-auth/react";
 // }
 
 const Dashboard = () => {
-
 	const {data: session} = useSession()
 	return(
 		<div className=" w-full h-screen  bg-dashboard bg-cover bg-center flex  justify-center items-center  bg-blend-multiply  bg-no-repeat">
 			<div className="relative   border-2 backdrop-blur-sm pl-20 pt-10  w-[75%] rounded-lg h-[80%] mt-[7vh] bg-black/20">
-				{session ? 
+				{session &&
 					<div className="font-bold text-5xl">
 						{session?.user?.name}
 					</div>
-					: 
-					<>
-						
-					</>
+					
 				}
-				{session ? 
+				{session && 
 					<div className="text-xl mt-4">
 						{session?.user?.email}
-					</div>: 
-					<>
-						
-					</>
+					</div>
 				}
 				{/* <div className="flex flex-row gap-4 mt-20 text-xl">
 					<div>
