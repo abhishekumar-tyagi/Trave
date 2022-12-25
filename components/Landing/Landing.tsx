@@ -20,6 +20,7 @@ const Landing = () => {
 					Explore
 				</div>
 			</div>
+			hello
 		</>
 		
 	)

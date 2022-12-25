@@ -3,9 +3,9 @@
 
 const About = () => {
 	return (
-		<>
-			About
-		</>
+		<div className="h-full  bg-red-400 ">
+			About 
+		</div>
 	)
 }
 
