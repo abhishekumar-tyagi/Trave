@@ -9,7 +9,8 @@ module.exports = {
       backgroundImage: {
         'landing': "url('/images/landing.jpeg')",
         'signin': "url('/images/signin.jpeg')",
-        'dashboard': "url('/images/dashboard.jpeg')"
+        'dashboard': "url('/images/dashboard.jpeg')",
+        'explore': "url('/images/explore.jpeg')"
       }
     },
   },

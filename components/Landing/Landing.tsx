@@ -1,3 +1,4 @@
+import router from "next/router";
 
 
 
@@ -16,7 +17,7 @@ const Landing = () => {
 				<div className="text-xl w-[50%] text-center">
 					We’re bringing a new path to travel and discover the beauty of India - Uncover Spectacular Destinations and Find Affordable Travel Deals! 
 				</div>
-				<div className="bg-white text-black  cursor-pointer   w-32 flex flex-row items-center justify-center pt-2 pb-2 rounded-lg">
+				<div onClick={() => router.push('/app/explore')} className="bg-white text-black  cursor-pointer   w-32 flex flex-row items-center justify-center pt-2 pb-2 rounded-lg">
 					Explore
 				</div>
 			</div>

@@ -1,5 +1,4 @@
 import { useSession } from "next-auth/react"
-import Link from "next/link"
 import router from "next/router"
 import Dropdown from "../Dropdown/Dropdown"
 
@@ -13,10 +12,10 @@ const Navbar = () => {
 				Mienai
 			</div>
 			<div className="flex flex-row gap-5  font-light">		
-				<div className="cursor-pointer">
+				<div className="cursor-pointer" onClick={() => router.push('/app/explore')}>
 					Explore
 				</div>
-				<div className="cursor-pointer" onClick={() => router.push('/app/about')}>
+				<div className="cursor-pointer" > {/*onClick={() => router.push('/app/about')}*/}
 					About
 				</div>
 				<div className="cursor-pointer">

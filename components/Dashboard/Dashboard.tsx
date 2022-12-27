@@ -1,20 +1,14 @@
-import { GetStaticProps } from "next";
+
 import { useSession } from "next-auth/react";
 
 
 
-// export const getServerSideprops = async (context) => {
-// 	const session = await getSession(context);
 
-// 	return {
-// 		props: {
-// 			session,
-// 		}
-// 	}
-// }
+
 
 const Dashboard = () => {
 	const {data: session} = useSession()
+	
 	return(
 		<div className=" w-full h-screen  bg-dashboard bg-cover bg-center flex  justify-center items-center  bg-blend-multiply  bg-no-repeat">
 			<div className="relative   border-2 backdrop-blur-sm pl-20 pt-10  w-[75%] rounded-lg h-[80%] mt-[7vh] bg-black/20">
@@ -51,3 +45,6 @@ const Dashboard = () => {
 
 
 export default Dashboard
+
+
+
