@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { SetStateAction, useState } from "react"
 
 
 
@@ -16,23 +16,23 @@ const Explore = () => {
 	const [isGenerating2, setIsGenerating2] = useState(false);
 	const [isGenerating3, setIsGenerating3] = useState(false);
 	
-	const handleSelect = (e) => {
+	const handleSelect = (e: SetStateAction<number>) => {
 		setSelected(e)
 	};
 
-	const toggleInputM1 = (e) => {
+	const toggleInputM1 = (e: { target: { value: SetStateAction<string>; }; }) => {
 		setInputM1(e.target.value);
 	};
-	const toggleInputR1 = (e) => {
+	const toggleInputR1 = (e: { target: { value: SetStateAction<string>; }; }) => {
 		setInputR1(e.target.value);
 	};
-	const toggleInputR2 = (e) => {
+	const toggleInputR2 = (e: { target: { value: SetStateAction<string>; }; }) => {
 		setInputR2(e.target.value);
 	};
-	const toggleInputH1 = (e) => {
+	const toggleInputH1 = (e: { target: { value: SetStateAction<string>; }; }) => {
 		setInputH1(e.target.value);
 	};
-	const toggleInputH2 = (e) => {
+	const toggleInputH2 = (e: { target: { value: SetStateAction<string>; }; }) => {
 		setInputH2(e.target.value);
 	};
 
