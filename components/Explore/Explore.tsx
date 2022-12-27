@@ -102,13 +102,13 @@ const Explore = () => {
 	}
 
 	return (
-		<div className="flex flex-col gap-10 h-screen items-center justify-start pt-[12vh] ">
-			<div className=" bg-explore w-[60%] rounded-lg  flex flex-col justify-center items-center bg-blend-multiply bg-black/30  bg-center bg-cover h-[30%]">
-				<div className="text-6xl font-bold ">
+		<div className="flex flex-col md:gap-10 gap-8 h-screen items-center justify-start pt-[12vh] ">
+			<div className=" bg-explore md:w-[60%] w-full md:rounded-lg  flex flex-col justify-center items-center bg-blend-multiply bg-black/30  bg-center bg-cover md:h-[30%] p-8 md:p-0">
+				<div className="md:text-6xl text-2xl font-bold ">
 					Travel Beyond Explored.
 				</div>	
 			</div>
-			<div className="flex flex-row gap-8 text-xl">
+			<div className="flex flex-row gap-8 md:text-xl ">
 				<div  onClick={() => handleSelect(1)} className={selected === 1 ? "underline underline-offset-8 cursor-pointer" : "cursor-pointer"}>
 					Monuments
 				</div>
@@ -125,13 +125,13 @@ const Explore = () => {
 						placeholder="Enter the City"
 						value={inputM1}
 						onChange={toggleInputM1}
-						className="rounded-lg border-2 border-[#C4C4C4] bg-[#D6D6D6] bg-opacity-25 w-96 p-2 focus:outline-none" 
+						className="rounded-lg border-2 border-[#C4C4C4] bg-[#D6D6D6] bg-opacity-25 md:w-96 w-[90%] p-2 focus:outline-none" 
 					/>
 					<div onClick={callGenerateMonuments} className={isGenerating1 ? "bg-white text-black font-medium cursor-pointer w-36 flex flex-row items-center justify-center pt-2 pb-2 rounded-lg" : "bg-white text-black  cursor-pointer w-36 flex flex-row items-center justify-center pt-2 pb-2 font-medium rounded-lg"}>
 						{isGenerating1 ? <p className="">Wait</p> : <p>Find Monuments</p>}
 					</div>
 					{apiOutput1 && (
-						<div className="w-auto flex flex-col -mt-10  justify-start  whitespace-pre-line text-xl font-medium  ">
+						<div className="md:w-auto w-[90%] flex flex-col -mt-10  justify-start  whitespace-pre-line md:text-xl font-medium  ">
 							{apiOutput1}
 						</div>
 					)}		
@@ -139,25 +139,25 @@ const Explore = () => {
 			)}
 			{selected === 2 && (
 				<>
-					<div className="flex flex-row gap-6">
+					<div className="flex md:flex-row flex-col w-full justify-center items-center gap-6">
 						<input 
 							placeholder="Enter the City"
 							value={inputH1}
 							onChange={toggleInputH1}
-							className="rounded-lg border-2 border-[#C4C4C4] bg-[#D6D6D6] bg-opacity-25 w-96 p-2 focus:outline-none" 
+							className="rounded-lg border-2 border-[#C4C4C4] bg-[#D6D6D6] bg-opacity-25 md:w-96 w-[90%] p-2 focus:outline-none" 
 						/>
 						<input 
 							placeholder="Enter your Preference"
 							value={inputH2}
 							onChange={toggleInputH2}
-							className="rounded-lg border-2 border-[#C4C4C4] bg-[#D6D6D6] bg-opacity-25 w-96 p-2 focus:outline-none" 
+							className="rounded-lg border-2 border-[#C4C4C4] bg-[#D6D6D6] bg-opacity-25 md:w-96 w-[90%] p-2 focus:outline-none" 
 						/>
 					</div>
 					<div onClick={callGenerateHotels} className={isGenerating2 ? "bg-white text-black font-medium loading  cursor-pointer w-36 flex flex-row items-center justify-center pt-2 pb-2 rounded-lg" : "bg-white text-black  cursor-pointer w-36 flex flex-row items-center justify-center pt-2 pb-2 font-medium rounded-lg"}>
 						{isGenerating2 ? <p className="">Wait</p> : <p>Find Hotels</p>}
 					</div>
 					{apiOutput2 && (
-						<div className="w-auto flex flex-col -mt-10 items-center transform-none whitespace-pre-line text-xl font-medium ">
+						<div className="md:w-auto w-[90%] flex flex-col -mt-10 items-center transform-none whitespace-pre-line md:text-xl font-medium ">
 							{apiOutput2}
 						</div>
 					)}		
@@ -165,25 +165,25 @@ const Explore = () => {
 			)}
 			{selected === 3 && (
 				<>
-					<div className="flex flex-row gap-6">	
+					<div className="flex md:flex-row flex-col w-full justify-center  items-center gap-6">	
 						<input 
 							placeholder="Enter the City"
 							value={inputR1}
 							onChange={toggleInputR1}
-							className="rounded-lg border-2 border-[#C4C4C4] bg-[#D6D6D6] bg-opacity-25 w-96 p-2 focus:outline-none" 
+							className="rounded-lg border-2 border-[#C4C4C4] bg-[#D6D6D6] bg-opacity-25 md:w-96 w-[90%] p-2 focus:outline-none" 
 						/>
 						<input 
 							placeholder="Enter your Preference"
 							value={inputR2}
 							onChange={toggleInputR2}
-							className="rounded-lg border-2 border-[#C4C4C4] bg-[#D6D6D6] bg-opacity-25 w-96 p-2 focus:outline-none" 
+							className="rounded-lg border-2 border-[#C4C4C4] bg-[#D6D6D6] bg-opacity-25 md:w-96 w-[90%] p-2 focus:outline-none" 
 						/>
 					</div>
 					<div onClick={callGenerateRestaurants} className={isGenerating3 ? "bg-white text-black font-medium loading  cursor-pointer w-36 flex flex-row items-center justify-center pt-2 pb-2 rounded-lg" : "bg-white text-black  cursor-pointer w-36 flex flex-row items-center justify-center pt-2 pb-2 font-medium rounded-lg"}>
 						{isGenerating3 ? <p className="">Wait</p> : <p>Find Restaurants</p>}
 					</div>
 					{apiOutput3 && (
-						<div className="w-auto flex flex-col -mt-10 items-center  whitespace-pre-line text-xl font-medium ">
+						<div className="md:w-auto w-[90%]  flex flex-col -mt-10 items-center  whitespace-pre-line md:text-xl font-medium ">
 							{apiOutput3}
 						</div>
 					)}
