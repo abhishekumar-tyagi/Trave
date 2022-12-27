@@ -157,7 +157,7 @@ const Explore = () => {
 						{isGenerating2 ? <p className="">Wait</p> : <p>Find Hotels</p>}
 					</div>
 					{apiOutput2 && (
-						<div className="w-auto flex flex-col items-center transform-none whitespace-pre-line text-xl font-medium ">
+						<div className="w-auto flex flex-col -mt-10 items-center transform-none whitespace-pre-line text-xl font-medium ">
 							{apiOutput2}
 						</div>
 					)}		
@@ -183,7 +183,7 @@ const Explore = () => {
 						{isGenerating3 ? <p className="">Wait</p> : <p>Find Restaurants</p>}
 					</div>
 					{apiOutput3 && (
-						<div className="w-auto flex flex-col items-center  whitespace-pre-line text-xl font-medium ">
+						<div className="w-auto flex flex-col -mt-10 items-center  whitespace-pre-line text-xl font-medium ">
 							{apiOutput3}
 						</div>
 					)}
