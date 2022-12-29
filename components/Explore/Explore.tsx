@@ -103,7 +103,7 @@ const Explore = () => {
 
 	return (
 		<div className="flex flex-col md:gap-10 gap-8 h-screen items-center justify-start pt-[12vh] ">
-			<div className=" bg-explore md:w-[60%] w-full md:rounded-lg  flex flex-col justify-center items-center bg-blend-multiply bg-black/30  bg-center bg-cover md:h-[30%] p-8 md:p-0">
+			<div className=" bg-explore lg:w-[60%] w-full md:rounded-lg  flex flex-col justify-center items-center bg-blend-multiply bg-black/30  bg-center bg-cover md:h-[30%] p-8 md:p-0">
 				<div className="md:text-6xl text-2xl font-bold ">
 					Travel Beyond Explored.
 				</div>	

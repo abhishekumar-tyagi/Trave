@@ -19,10 +19,10 @@ const Dropdown = () => {
 						</div>
 					}
 					<div>
-						<img src="/images/Dropdown.svg" alt="dropdown" draggable="false"/>
+						<img src="/images/Dropdown.svg" alt="dropdown" draggable="false" className=' rotate-180 md:rotate-0'/>
 					</div>
 				</DropdownMenu.Trigger>
-				<DropdownMenu.Content sideOffset={8} align="end" className="z-100 backdrop-blur-sm bg-gradient-to-br from-white/30 via-white/20 to-white/10  w-60 pt-2 pb-2 border-2 flex flex-col gap-2 rounded-lg  ">
+				<DropdownMenu.Content sideOffset={8} align="end" className="z-100  md:backdrop-blur-sm md:bg-gradient-to-br from-white/30 via-white/20 to-white/10  md:w-60 w-40   md:pt-2 pt-1 pb-1 md:pb-2 border-2 flex flex-col md:gap-2 rounded-lg  ">
 					<DropdownMenu.Item onClick={() => router.push('/app/dashboard')} className='focus:outline-none cursor-pointer hover:underline-offset-2 hover:underline hover:bg-white/20 p-2'>
 						Profile
 					</DropdownMenu.Item>

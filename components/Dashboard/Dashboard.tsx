@@ -11,15 +11,15 @@ const Dashboard = () => {
 	
 	return(
 		<div className=" w-full h-screen  bg-dashboard bg-cover bg-center flex  justify-center items-center  bg-blend-multiply  bg-no-repeat">
-			<div className="relative   border-2 backdrop-blur-sm pl-20 pt-10  w-[75%] rounded-lg h-[80%] mt-[7vh] bg-black/20">
+			<div className="relative   border-2 backdrop-blur-sm md:pl-20 pl-10 md:pt-10 pt-5  md:w-[75%] w-[90%] rounded-lg h-[80%] mt-[7vh] bg-black/20">
 				{session &&
-					<div className="font-bold text-5xl">
+					<div className="font-bold md:text-5xl text-3xl">
 						{session?.user?.name}
 					</div>
 					
 				}
 				{session && 
-					<div className="text-xl mt-4">
+					<div className="text-xl md:mt-4 mt-2">
 						{session?.user?.email}
 					</div>
 				}
@@ -35,7 +35,7 @@ const Dashboard = () => {
 				<div className="text-xl mt-5">
 					🇮🇳 India 
 				</div> */}
-				<div className="absolute right-0 bottom-0 pb-10 pr-10 cursor-pointer">
+				<div className="absolute right-0 bottom-0 md:pb-10 pb-5 pr-5 md:pr-10 cursor-pointer">
 					<img src="/images/Edit.svg" alt="edit" draggable="false" />
 				</div>
 			</div>
