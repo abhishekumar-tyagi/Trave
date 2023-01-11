@@ -128,7 +128,7 @@ const Explore = () => {
 						className="rounded-lg border-2 border-[#C4C4C4] bg-[#D6D6D6] bg-opacity-25 md:w-96 w-[90%] p-2 focus:outline-none" 
 					/>
 					{inputM1 ? <div onClick={callGenerateMonuments} className={isGenerating1 ? "bg-white text-black font-medium cursor-pointer w-36 flex flex-row items-center justify-center pt-2 pb-2 rounded-lg" : "bg-white text-black  cursor-pointer w-36 flex flex-row items-center justify-center pt-2 pb-2 font-medium rounded-lg"}>
-						{isGenerating1 ? <p className="">Wait</p> : <p>Find Monuments</p>}
+						{isGenerating1 ? <p className="">Searching...</p> : <p>Find Monuments</p>}
 					</div>:<></>}
 					{apiOutput1 && (
 						<div className="md:w-auto w-[90%] flex flex-col -mt-10  justify-start  whitespace-pre-line md:text-xl font-medium  ">
@@ -154,7 +154,7 @@ const Explore = () => {
 						/>
 					</div>
 					{inputH1 ? <div onClick={callGenerateHotels} className={isGenerating2 ? "bg-white text-black font-medium loading  cursor-pointer w-36 flex flex-row items-center justify-center pt-2 pb-2 rounded-lg" : "bg-white text-black  cursor-pointer w-36 flex flex-row items-center justify-center pt-2 pb-2 font-medium rounded-lg"}>
-						{isGenerating2 ? <p className="">Wait</p> : <p>Find Hotels</p>}
+						{isGenerating2 ? <p className="">Searching...</p> : <p>Find Hotels</p>}
 					</div> : <></>}
 					{apiOutput2 && (
 						<div className="md:w-auto w-[90%] flex flex-col -mt-10 items-center transform-none whitespace-pre-line md:text-xl font-medium ">
@@ -180,7 +180,7 @@ const Explore = () => {
 						/>
 					</div>
 					{ inputR1 ? <div onClick={callGenerateRestaurants} className={isGenerating3 ? "bg-white text-black font-medium loading  cursor-pointer w-36 flex flex-row items-center justify-center pt-2 pb-2 rounded-lg" : "bg-white text-black  cursor-pointer w-36 flex flex-row items-center justify-center pt-2 pb-2 font-medium rounded-lg"}>
-						{isGenerating3 ? <p className="">Wait</p> : <p>Find Restaurants</p>}
+						{isGenerating3 ? <p className="">Searching...</p> : <p>Find Restaurants</p>}
 					</div> : <></>}
 					{apiOutput3 && (
 						<div className="md:w-auto w-[90%]  flex flex-col -mt-10 items-center  whitespace-pre-line md:text-xl font-medium ">

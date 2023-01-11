@@ -19,7 +19,7 @@ const Navbar = () => {
 				<div className="cursor-pointer" > {/*onClick={() => router.push('/app/about')}*/}
 					About
 				</div>
-				<div className="cursor-pointer" >
+				<div className="cursor-pointer" onClick={() => router.push('/app/contact')} >
 					Contact
 				</div>
 			</div>
