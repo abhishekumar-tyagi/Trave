@@ -22,6 +22,9 @@ const Navbar = () => {
 				<div className="cursor-pointer" onClick={() => router.push('/app/contact')} >
 					Contact
 				</div>
+				<div className="cursor-pointer" onClick={() => router.push('/app/chat')} >
+					Chat
+				</div>
 			</div>
 			{!session ?
 				<div onClick={() => router.push('/app/signin')} className="border-2 cursor-pointer rounded-lg w-32 md:flex hidden flex-row items-center justify-center pt-1.5 pb-1.5">
