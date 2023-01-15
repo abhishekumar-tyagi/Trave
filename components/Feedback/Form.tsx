@@ -74,7 +74,7 @@ const Form: React.FC<FeedbackFormProps> = () => {
 				required
 				onChange={handleChange}
 			></textarea>
-			<button className="bg-white mt-2 text-black py-2 px-4 rounded-lg hover:bg-blue-600">
+			<button className="bg-white mt-2 text-black py-2 px-4 rounded-lg ">
 				Submit Feedback
 			</button>
     		</form>
