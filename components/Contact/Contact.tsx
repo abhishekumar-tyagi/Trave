@@ -5,8 +5,8 @@ import Form from "../Feedback/Form"
 
 const Contact = () => {
 	return (
-		<div className="flex bg-contact h-screen bg-center bg-cover bg-black/40 bg-blend-multiply flex-col gap-10  pt-[20vh] pl-5  md:pl-[20vh] w-full ">
-			<div className=" md:text-6xl text-4xl font-semibold">
+		<div className="flex bg-contact h-screen  bg-center bg-cover bg-black/40 bg-blend-multiply flex-col md:gap-10 gap-5  lg:pt-[20vh] pt-[15vh]  pr-4 md:pr-0 pl-4 md:pl-[5vh] lg:pl-[20vh] md:w-full  ">
+			<div className=" lg:text-6xl md:text-5xl text-4xl font-semibold">
 				Lets get to know each other !
 			</div>
 			<div className="md:text-2xl">
@@ -32,7 +32,7 @@ const Contact = () => {
 					</div>
 				</Link>
 			</div>
-			<div className="w-max">
+			<div className="md:w-max  pb-5 sm:pb-0 ">
 				<Form />
 			</div>
 			

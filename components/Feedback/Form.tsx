@@ -59,6 +59,7 @@ const Form: React.FC<FeedbackFormProps> = () => {
 
 	    
 	return (
+		<>
 		<form  className="border-2 border-gray-400 backdrop-blur-lg p-6 w-full  rounded-lg " onSubmit={handleSubmit}>
 			<label className="block  font-medium mb-2" htmlFor="name">
 				Name
@@ -101,17 +102,19 @@ const Form: React.FC<FeedbackFormProps> = () => {
 			<button className="bg-white mt-2 text-black py-2 px-4 rounded-lg ">
 				{sending ? <>Sending..</> : <>Submit Feedback</>}
 			</button>
-			{submitted && showMessage &&
-				<div className="absolute right-0 bottom-0 mr-[5vh] mb-[5vh] p-4 rounded-lg bg-white text-green-600 text-lg font-medium ">
-					Your feedback has been sent!  
-				</div>
-			}
-        		{error && showMessage &&
-				<div className="absolute right-0 bottom-0 mr-[5vh] mb-[5vh] p-4 rounded-lg bg-white text-red-600 text-lg font-medium ">
-					An error occurred. Your feedback was not sent!
-				</div>
-			}
+			
     		</form>
+		{submitted && showMessage &&
+			<div className="absolute right-0 bottom-0 lg:mr-[5vh]  lg:mb-[5vh] p-4 rounded-lg bg-white text-green-600 text-lg font-medium ">
+				Your feedback has been sent!  
+			</div>
+		}
+		{error && showMessage &&
+			<div className="absolute right-0 bottom-0 lg:mr-[5vh] lg:mb-[5vh] p-4 rounded-lg bg-white text-red-600 text-lg font-medium ">
+				An error occurred. Your feedback was not sent!
+			</div>
+		}
+		</>
 
 	)
 }
