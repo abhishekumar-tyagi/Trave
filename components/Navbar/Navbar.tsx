@@ -34,7 +34,6 @@ const Navbar = () => {
 				<div className="hidden md:block">
 					<Dropdown />
 				</div>
-				
 			}
 			<div className="flex md:hidden w-full  absolute right-0">
 				<Dropdown_M />

@@ -10,7 +10,8 @@ module.exports = {
         'landing': "url('/images/landing.jpeg')",
         'signin': "url('/images/signin.jpeg')",
         'dashboard': "url('/images/dashboard.jpeg')",
-        'explore': "url('/images/explore.jpeg')"
+        'explore': "url('/images/explore.jpeg')",
+        'contact': "url('/images/contact.jpeg')",
       }
     },
   },
