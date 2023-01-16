@@ -12,6 +12,7 @@ module.exports = {
         'dashboard': "url('/images/dashboard.jpeg')",
         'explore': "url('/images/explore.jpeg')",
         'contact': "url('/images/contact.jpeg')",
+        'about': "url('/images/about.jpeg')",
       }
     },
   },

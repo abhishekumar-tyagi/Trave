@@ -28,11 +28,11 @@ const Form: React.FC<FeedbackFormProps> = () => {
 		setSending(true)
 		try {
 			const response = await fetch('/api/feedback', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify(formData),
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(formData),
 			});
 			if(response.ok) {
 				console.log("Email sent!");
@@ -60,7 +60,7 @@ const Form: React.FC<FeedbackFormProps> = () => {
 	    
 	return (
 		<>
-		<form  className="border-2 border-gray-400 backdrop-blur-lg p-6 w-full  rounded-lg " onSubmit={handleSubmit}>
+		<form  className="border-2 border-gray-400 backdrop-blur-lg sm:p-6 p-2 w-full   rounded-lg " onSubmit={handleSubmit}>
 			<label className="block  font-medium mb-2" htmlFor="name">
 				Name
 			</label>

@@ -2,13 +2,28 @@ import { useSession } from "next-auth/react"
 import router from "next/router"
 import Dropdown from "../Dropdown/Dropdown"
 import Dropdown_M from "../Dropdown/Dropdown_M"
+import { useEffect, useState } from "react"
 
 
 
 const Navbar = () => {
 	const {data: session} = useSession()
+	const [scroll, setScroll] = useState(false);
+
+	const handleScroll = () => {
+		if(window.scrollY >= 50){
+			setScroll(true);
+		}
+		else{
+			setScroll(false);
+		}
+			
+	}
+	useEffect(() => {
+		window.addEventListener('scroll', handleScroll);
+	}) 
 	return (
-		<div className="flex z-10 flex-row fixed w-full  md:pt-5 md:items-center md:justify-around   pl-5  md:pl-0 ">
+		<div className={scroll ? "flex z-10 bg-black/60 backdrop-blur-md flex-row fixed w-full  md:pt-5 md:pb-5 md:items-center md:justify-around   pl-5  md:pl-0 " : "flex z-10 flex-row fixed w-full  md:pt-5 md:items-center md:justify-around   pl-5  md:pl-0 "}>
 			<div className="text-4xl font-medium z-10 cursor-pointer pt-5 md:pt-0 " onClick={() => router.push('/')}>
 				Mienai
 			</div>
@@ -16,7 +31,7 @@ const Navbar = () => {
 				<div className="cursor-pointer" onClick={() => router.push('/app/explore')}>
 					Explore
 				</div>
-				<div className="cursor-pointer" > {/*onClick={() => router.push('/app/about')}*/}
+				<div className="cursor-pointer" onClick={() => router.push('/app/about')}> 
 					About
 				</div>
 				<div className="cursor-pointer" onClick={() => router.push('/app/contact')} >
