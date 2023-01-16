@@ -5,7 +5,7 @@ import router from "next/router"
 const About = () => {
 	return (
 		<div className="w-full h-full  ">
-			<div className="bg-about bg-cover relative bg-center bg-blend-multiply bg-black/40 h-screen w-full flex flex-col items-center justify-center  text-center ">
+			<div className="bg-about bg-cover relative bg-center bg-blend-multiply bg-black/40 h-screen w-full flex flex-col items-center justify-center   ">
 				<div className="text-3xl">
 					Make your experience of travelling India
 				</div>

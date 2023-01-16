@@ -35,7 +35,7 @@ const Dashboard = () => {
 				<div className="text-xl mt-5">
 					🇮🇳 India 
 				</div> */}
-				<div onClick={() => router.push('/app/edit')} className="absolute right-0 bottom-0 md:pb-10 pb-5 pr-5 md:pr-10 cursor-pointer">
+				<div  className="absolute right-0 bottom-0 md:pb-10 pb-5 pr-5 md:pr-10 cursor-pointer">
 					<img src="/images/Edit.svg" alt="edit" draggable="false" />
 				</div>
 			</div>
