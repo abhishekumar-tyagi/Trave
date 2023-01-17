@@ -34,7 +34,7 @@ const About = () => {
 					</div>
 				</div>
 				<div className="flex flex-row bg-white rounded-lg text-black items-center w-full justify-center h-[10%] ">
-					<div className="w-[50%] p-5   flex justify-end">
+					<div className="w-[50%] p-5   flex justify-start">
 						<img src="/images/market.jpeg" className="h-[60vh]  rounded-lg"/>
 					</div>
 					<div className="w-full   text-xl p-7 flex flex-col gap-5 ">

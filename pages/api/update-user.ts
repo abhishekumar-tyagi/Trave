@@ -15,6 +15,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 		if (!user) {
 			throw new Error("User not found");
 		}
+		
 		const updatedUser = await prisma.user.update({
 			data: {
 				name: name,
