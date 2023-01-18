@@ -1,6 +1,6 @@
 
 import { useSession } from "next-auth/react";
-import router from "next/router";
+import router, { useRouter } from "next/router";
 
 
 
@@ -9,6 +9,7 @@ import router from "next/router";
 
 const Dashboard = () => {
 	const {data: session} = useSession()
+
 	
 	return(
 		<div className=" w-full h-screen  bg-dashboard bg-cover md:bg-center flex  justify-center items-center  bg-blend-multiply  bg-no-repeat">
@@ -17,12 +18,12 @@ const Dashboard = () => {
 					<div className="font-bold md:text-5xl text-3xl">
 						{session?.user?.name}
 					</div>
-				}
+				 }
 				{session && 
 					<div className="text-xl md:mt-4 mt-2">
 						{session?.user?.email}
 					</div>
-				}
+				}			
 				{/* <div className="flex flex-row gap-4 mt-20 text-xl">
 					<div>
 						Male
@@ -35,7 +36,7 @@ const Dashboard = () => {
 				<div className="text-xl mt-5">
 					🇮🇳 India 
 				</div> */}
-				<div  className="absolute right-0 bottom-0 md:pb-10 pb-5 pr-5 md:pr-10 cursor-pointer">
+				<div onClick={() => router.push('/app/edit')} className="absolute right-0 bottom-0 md:pb-10 pb-5 pr-5 md:pr-10 cursor-pointer">
 					<img src="/images/Edit.svg" alt="edit" draggable="false" />
 				</div>
 			</div>
