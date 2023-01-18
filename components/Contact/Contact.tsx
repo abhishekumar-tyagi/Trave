@@ -6,7 +6,7 @@ import Form from "../Feedback/Form"
 const Contact = () => {
 	return (
 		<div className="bg-contact h-screen  bg-center bg-cover bg-black/40 bg-blend-multiply  w-full flex  justify-center items-center  ">
-			<div className="flex flex-col md:w-[75%] w-[90%] gap-4 sm:gap-7 mt-[8vh] md:mt-0">
+			<div className="flex relative h-[70%] flex-col md:w-[75%]  w-[90%] gap-4 sm:gap-7 mt-[8vh] md:mt-0">
 				<div className=" lg:text-6xl md:text-5xl text-3xl font-semibold">
 					Lets get to know each other !
 				</div>
@@ -42,7 +42,7 @@ const Contact = () => {
 						</Link>
 					</div>
 				</div>
-				<div className="md:w-max ">
+				<div className="md:w-max absolute right-0 bottom-0">
 					<Form />
 				</div>
 			</div>

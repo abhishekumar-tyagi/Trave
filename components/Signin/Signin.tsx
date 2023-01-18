@@ -21,7 +21,7 @@ const Signin = () => {
 				</div>
 			</div>
 			<div className="w-full">
-				<div onClick={() => router.push('/')} className="text-3xl font-medium cursor-pointer absolute right-0 pt-10 pr-[5vh]">
+				<div onClick={() => router.push('/')} className="text-3xl font-medium cursor-pointer absolute top-0 right-0 pt-10 pr-[5vh]">
 					Mienai
 				</div>
 				<div className="flex flex-col justify-center gap-8 items-center h-screen">
