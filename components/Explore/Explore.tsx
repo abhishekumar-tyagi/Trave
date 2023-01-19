@@ -1,4 +1,6 @@
 import { SetStateAction, useState } from "react"
+import SearchHotel from "./SearchHotel";
+import ResultHotel from "./ResultHotel";
 
 
 
@@ -108,7 +110,7 @@ const Explore = () => {
 					Travel Beyond Explored.
 				</div>	
 			</div>
-			<div className="flex flex-row gap-8 md:text-xl ">
+			{/* <div className="flex flex-row gap-8 md:text-xl ">
 				<div  onClick={() => handleSelect(1)} className={selected === 1 ? "underline underline-offset-8 cursor-pointer" : "cursor-pointer"}>
 					Monuments
 				</div>
@@ -188,9 +190,14 @@ const Explore = () => {
 						</div>
 					)}
 				</>
-			)}
+			)} */}
+
+			<SearchHotel />
 		</div>
 	)
 }
 
 export default Explore
+
+
+
