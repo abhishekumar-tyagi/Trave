@@ -121,8 +121,8 @@ const Edit = () => {
 					</div>	
 					
 				</form>
-				<button onClick={handleDelete} className="w-max absolute bottom-0 left-0 ml-20 mb-10 bg-red-500 pl-4 pr-4 pt-2 pb-2 rounded-lg">
-						Delete
+				<button onClick={handleDelete} className="w-max absolute bottom-0 left-0 md:ml-20 md:mb-10 mb-5 ml-5 bg-red-500 pl-4 pr-4 pt-2 pb-2 rounded-lg">
+					Delete
 				</button>
 			</div>
 		</div>

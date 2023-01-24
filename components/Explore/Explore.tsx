@@ -1,6 +1,7 @@
 import { SetStateAction, useState } from "react"
 import SearchHotel from "./SearchHotel";
 import ResultHotel from "./ResultHotel";
+import Link from "next/link";
 
 
 
@@ -12,7 +13,7 @@ const Explore = () => {
 	const [inputH1, setInputH1] =  useState('');
 	const [inputH2, setInputH2] = useState('');
 	const [apiOutput1, setApiOutput1] = useState('');
-	const [apiOutput2, setApiOutput2] = useState('');
+	const [hotels, setHotels] = useState([]);
 	const [apiOutput3, setApiOutput3] = useState('');
 	const [isGenerating1, setIsGenerating1] = useState(false);
 	const [isGenerating2, setIsGenerating2] = useState(false);
@@ -62,25 +63,23 @@ const Explore = () => {
 		setIsGenerating2(true);
 		
 		console.log("Calling OpenAI...")
-		if (inputH1 === undefined && inputH2 === undefined) {
-			setApiOutput2("Enter the about values!");
-			setIsGenerating2(false);
-		} else {
-			const response = await fetch('/api/assistant/hotel', {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify({ inputH1, inputH2 }),
-			});
-			const data = await response.json();
-			console.log(data);
-			const { output } = data;
-			console.log("OpenAI replied...", output.text)
 		
-			setApiOutput2(`${output.text}`);
-			setIsGenerating2(false);	
-		}
+		const response = await fetch('/api/assistant/hotel', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({ inputH1, inputH2 }),
+		});
+		console.log(response);
+		const data = await response.json();
+		console.log(data);
+		const { hotels } = data;
+		console.log("OpenAI replied...", hotels)
+		
+		setHotels(hotels);
+		console.log(hotels)
+		setIsGenerating2(false);	
 	}
 
 	const callGenerateRestaurants = async () => {
@@ -104,13 +103,13 @@ const Explore = () => {
 	}
 
 	return (
-		<div className="flex flex-col md:gap-10 gap-8 h-screen items-center justify-start pt-[12vh] ">
-			<div className=" bg-explore lg:w-[60%] w-full md:rounded-lg  flex flex-col justify-center items-center bg-blend-multiply bg-black/30  bg-center bg-cover md:h-[30%] p-8 md:p-0">
-				<div className="md:text-6xl text-2xl font-bold ">
+		<div className="flex flex-col md:gap-10 gap-8 h-full w-full  items-center justify-start pt-[12vh] ">
+			<div className=" bg-explore lg:w-[60%] w-full md:rounded-lg  flex flex-col justify-center items-center bg-blend-multiply bg-black/30  bg-center bg-cover md:h-[20%] p-8 md:p-0">
+				<div className="md:text-6xl text-2xl font-bold  ">
 					Travel Beyond Explored.
 				</div>	
 			</div>
-			{/* <div className="flex flex-row gap-8 md:text-xl ">
+			<div className="flex flex-row gap-8 md:text-xl ">
 				<div  onClick={() => handleSelect(1)} className={selected === 1 ? "underline underline-offset-8 cursor-pointer" : "cursor-pointer"}>
 					Monuments
 				</div>
@@ -122,7 +121,7 @@ const Explore = () => {
 				</div>
 			</div>
 			{selected === 1 && (
-				<>
+				<div className="flex flex-col items-center gap-5 w-full ">
 					<input 
 						placeholder="Enter the City"
 						value={inputM1}
@@ -137,10 +136,10 @@ const Explore = () => {
 							{apiOutput1}
 						</div>
 					)}		
-				</>
+				</div>
 			)}
 			{selected === 2 && (
-				<>
+				<div className="flex flex-col items-center gap-5 w-full ">
 					<div className="flex md:flex-row flex-col w-full justify-center items-center gap-6">
 						<input 
 							placeholder="Enter the City"
@@ -158,15 +157,26 @@ const Explore = () => {
 					{inputH1 ? <div onClick={callGenerateHotels} className={isGenerating2 ? "bg-white text-black font-medium loading  cursor-pointer w-36 flex flex-row items-center justify-center pt-2 pb-2 rounded-lg" : "bg-white text-black  cursor-pointer w-36 flex flex-row items-center justify-center pt-2 pb-2 font-medium rounded-lg"}>
 						{isGenerating2 ? <p className="">Searching...</p> : <p>Find Hotels</p>}
 					</div> : <></>}
-					{apiOutput2 && (
-						<div className="md:w-auto w-[90%] flex flex-col -mt-10 items-center transform-none whitespace-pre-line md:text-xl font-medium ">
-							{apiOutput2}
-						</div>
-					)}		
-				</>
+					<div className="grid md:grid-cols-3 grid-cols-1 lg:gap-10 md:gap-5 gap-10 p-5">
+						{hotels.map((hotel) => (
+							<div key={hotel.index} className="bg-white text-black rounded-lg p-4 flex flex-col gap-10">
+								{/* <img src="/images/goa.jpeg" /> */}
+								<div className="flex flex-col gap-2">
+									<div className="text-3xl font-semibold">{hotel.name}</div>
+									<div className="">{hotel.location}</div>
+								</div>
+								{/* <Link href="https://wa.me/8178297068?text=Hello%20there!"> */}
+									<button className="border-black border pt-2 pb-2 pl-4 pr-4">
+										Book Now
+									</button>
+								{/* </Link> */}	
+							</div>
+						))}
+					</div>	
+				</div>
 			)}
 			{selected === 3 && (
-				<>
+				<div className="flex flex-col items-center gap-5 w-full ">
 					<div className="flex md:flex-row flex-col w-full justify-center  items-center gap-6">	
 						<input 
 							placeholder="Enter the City"
@@ -189,15 +199,29 @@ const Explore = () => {
 							{apiOutput3}
 						</div>
 					)}
-				</>
-			)} */}
+				</div>
+			)}
 
-			<SearchHotel />
+			
 		</div>
 	)
 }
 
 export default Explore
 
+// import dayjs from "dayjs";
 
 
+// const Explore = () => {
+// 	const [cityCode, setCityCode] = useState(null);
+// 	const [checkInDate, setCheckInDate] = useState(dayjs());
+// 	const [checkOutDate, setCheckOutDate] = useState(dayjs().add(1, "day"));
+// 	return (
+// 		<div>
+// 			<SearchHotel setCityCode={setCityCode} />
+// 		</div>
+// 	)
+// }
+
+
+// export default Explore

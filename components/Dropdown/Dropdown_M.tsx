@@ -19,11 +19,14 @@ const CollapsibleDemo = () => {
 				<div onClick={() => router.push('/app/explore')}  className="bg-white/20 hover:bg-white/40 cursor-pointer border-2 rounded-lg p-1 w-32 flex flex-row items-center justify-center">
 					<span className="">Explore</span>
 				</div>
-				<div className="bg-white/20 hover:bg-white/40 border-2  rounded-lg p-1 w-32 flex flex-row cursor-pointer items-center justify-center">
+				<div onClick={() => router.push('/app/about')} className="bg-white/20 hover:bg-white/40 border-2  rounded-lg p-1 w-32 flex flex-row cursor-pointer items-center justify-center">
 					<span className="">About</span>
 				</div>
 				<div onClick={() => router.push('/app/contact')} className="bg-white/20 hover:bg-white/40 border-2 cursor-pointer rounded-lg p-1 w-32 flex flex-row items-center justify-center">
 					<span className="">Contact</span>
+				</div>
+				<div onClick={() => router.push('/app/chat')} className="bg-white/20 hover:bg-white/40 border-2 cursor-pointer rounded-lg p-1 w-32 flex flex-row items-center justify-center">
+					<span className="">Chat</span>
 				</div>
 			</Collapsible.Content>
 			<Collapsible.Content>

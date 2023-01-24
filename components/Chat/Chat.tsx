@@ -13,7 +13,7 @@ export const initialMessages: Message[] = [
 ]
 
 const InputMessage = ({ input, setInput, sendMessage }: any) => (
-  <div className="mt-6 flex clear-both">
+  <div className="mt-6 flex  clear-both">
     <input
       type="text"
       aria-label="chat input"
@@ -32,7 +32,7 @@ const InputMessage = ({ input, setInput, sendMessage }: any) => (
     />
     <button
       type="submit"
-      className="ml-4 border-2 cursor-pointer rounded-lg w-32 md:flex hidden flex-row items-center justify-center pt-1.5 pb-1.5" 
+      className="ml-4 border-2 cursor-pointer rounded-lg w-32 flex flex-row items-center justify-center pt-1.5 pb-1.5" 
       onClick={() => {
         sendMessage(input)
         setInput('')
@@ -90,7 +90,7 @@ const Chat = () => {
 	}
 
 	return (
-		<div className="rounded-2xl  w-[30%] h-[80%] overflow-auto flex flex-col justify-between  border-zinc-100 border p-6">
+		<div className="rounded-2xl  lg:w-[40%] md:w-[80%] w-[90%] mt-10 sm:mt-0  h-[80%] overflow-auto flex flex-col justify-between  border-zinc-100 border p-6">
 			<div>
 				{messages.map(({ message, who }, index) => (
 					<ChatLine key={index} who={who} message={message} />

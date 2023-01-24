@@ -1,79 +1,91 @@
-import { useState } from "react";
-import ResultHotel from "./ResultHotel";
+import React, { useEffect, useState } from "react";
+import {
+  Grid,
+  InputAdornment,
+  makeStyles,
+  TextField,
+  Typography,
+  Autocomplete
+} from "@mui/material";
+ 
+import {
+  LocationOn as PinIcon,
+  Search as MagnifierIcon,
+} from "@mui/icons-material";
+import clsx from "clsx";
+import { search } from "./api";
 
 
+const SearchHotel = (setCityCode: (arg0: any) => void) => {
+  
+  const [inputValue, setInputValue] = useState("");
+  const [options, setOptions] = useState([]);
 
+  useEffect(() => {
+    const { process } = search(inputValue);
 
-const SearchHotel = () => {
-	const [location, setLocation] = useState('');
-	const [checkin, setCheckin] = useState('');
-	const [checkout, setCheckout] = useState('');
-	const [hotels, setHotels] = useState([]);
-	const [error, setError] = useState(null);
+    process((options: React.SetStateAction<never[]>) => {
+      setOptions(options);
+    });
 
-	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-		e.preventDefault();
-	      
-		try {
-			const response = await fetch(
-				`https://test.api.amadeus.com/v1/reference-data/locations/hotels/by-city?apikey=9SfCcotomv2uUIqxWUYX0DE1Koxl&location=${location}&check_in=${checkin}&check_out=${checkout}`,
-				{
-					method: 'GET',
-					headers: {
-						'Content-Type': 'application/json',
-						Authorization: 'Bearer 9SfCcotomv2uUIqxWUYX0DE1Koxl',
-					},
-				}
-			);
-			if (!response.ok) {
-				throw new Error(response.statusText);
-			}
-			const data = await response.json();
-			setHotels(data.results);
-			console.log(hotels);
-		} catch (error) {
-			
-		  	console.error(error);
-		}
-	};
-	return (
-		 <div>
-			<form onSubmit={handleSubmit}>
-				<label>
-					Location
-				</label>
-				<input 
-					type="text" 
-					name="location"
-					value={location}
-					onChange={(e) => setLocation(e.target.value)} 
-				/>
-				<label>
-					Check-in
-				</label>
-				<input 
-					type="date" 
-					name="checkin"
-					value={checkin}
-					onChange={(e) => setCheckin(e.target.value)}
-				/>
-				<label>
-					Check-out
-				</label>
-				<input 
-					type="date" 
-					name="checkout"
-					value={checkout}
-					onChange={(e) => setCheckout(e.target.value)}
-				/>
-				<input type="submit" value="Search" />
-			</form>
-			{hotels.length > 0 && <ResultHotel hotels={hotels} />}
-		</div>
-	)
-}
+    return 
+  }, [inputValue]);
 
-export default SearchHotel
+  return (
+    <div className="w-full h-screen border  p-20">
+      <Autocomplete
+        autoComplete
+        autoHighlight
+        freeSolo
+        disableClearable
+        blurOnSelect
+        clearOnBlur
+        options={options}
+        onChange={(event, newValue) => {
+          setCityCode(newValue.code);
+        }}
+        onInputChange={(event, newInputValue) => {
+          setInputValue(newInputValue);
+        }}
+        getOptionLabel={(option) => option.city || ""}
+        renderOption={(option) => {
+          return (
+            <Grid container alignItems="center">
+              <Grid item>
+                <PinIcon  />
+              </Grid>
+              <Grid item xs>
+                <div>{option.city}</div>
+                <Typography variant="body2" color="textSecondary">
+                  {option.country}
+                  {option.state ? `, ${option.state}` : ""}
+                </Typography>
+              </Grid>
+            </Grid>
+          );
+        }}
+        renderInput={(props) => (
+          <TextField
+            {...props}
+            placeholder="Search"
+            label="City"
+            variant="outlined"
+	    className="w-96 bg-white "
+            InputProps={{
+              ...props.InputProps,
+              startAdornment: (
+                <InputAdornment position="start">
+                  <MagnifierIcon
+                    
+                  />
+                </InputAdornment>
+              ),
+            }}
+          />
+        )}
+      />
+    </div>
+  );
+};
 
-
-
+export default SearchHotel;
