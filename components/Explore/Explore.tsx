@@ -1,6 +1,5 @@
 import { JSXElementConstructor, Key, ReactElement, ReactFragment, ReactPortal, SetStateAction, useState } from "react"
-import SearchHotel from "./SearchHotel";
-import ResultHotel from "./ResultHotel";
+
 import Link from "next/link";
 
 
