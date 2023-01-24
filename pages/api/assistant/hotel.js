@@ -8,7 +8,7 @@ const openai = new OpenAIApi(configuration);
 
 const generateAction = async (req, res) => {
   	// Run first prompt
-	const basePrompt = `Create a list of top 10 Hotels to visit in ${req.body.inputH1}  with their address which are ${req.body.inputH2}. Do not provide pincode in the address.`
+	const basePrompt = `Create a list of top 10 Hotels to visit in ${req.body.inputH1}  with their address which are ${req.body.inputH2}. Do not provide pincode in the address. Do not repeat any hotels`
 	console.log(basePrompt);
 	const baseCompletion = await openai.createCompletion({
 		model: 'text-davinci-003',
